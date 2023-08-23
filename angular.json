@@ -3,5 +3,41 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "moy-lib": {
+      "projectType": "library",
+      "root": "projects/moy-lib",
+      "sourceRoot": "projects/moy-lib/src",
+      "prefix": "moy",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/moy-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/moy-lib/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/moy-lib/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/moy-lib/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": "a471376b-d4cd-4f48-bb52-af84f14d9053"
   }
 }
