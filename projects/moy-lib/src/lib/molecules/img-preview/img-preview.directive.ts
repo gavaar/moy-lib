@@ -8,10 +8,13 @@ const LOADING_GIF = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs='
 @Component({
   standalone: true,
   template: `
-    <div>
+    <div class="MoyImgPreview">
       <img [src]="data.originalSrc" />  
     </div>
   `,
+  styles: [`
+    .MoyImgPreview img { width: 100%; height: auto }
+  `],
   imports: [DialogModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -46,8 +49,8 @@ export class MoyImgPreviewDirective implements OnInit {
   @HostListener('click')
   onClick() {
     this.dialog.open(MoyImgPreviewComponent, {
-      maxWidth: '64vw',
-      maxHeight: '48vh',
+      maxWidth: '95vw',
+      maxHeight: '95vh',
       data: {
         originalSrc: this._originalSrc,
       },
