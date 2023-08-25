@@ -24,7 +24,10 @@ ng add @angular/cdk
 
 # Changelog
 
-# v0.0.1
+### v0.0.1
+- Fix preview image overflowing the modal
+
+### v0.0.0
 - Added `MoyImageResizer` class.
 - Added `lazyLoadSrc` function.
 - Added `img[moy-preview]` directive.
